@@ -19,8 +19,7 @@
             <pre><code>const paragraphs = document.querySelectorAll("p");
 // paragraphs[0] is the first &lt;p&gt; element
 // paragraphs[1] is the second &lt;p&gt; element, etc.
-alert(paragraphs[0].nodeName);</code>
-            </pre>
+alert(paragraphs[0].nodeName);</code></pre>
             <p>All of the properties, methods, and events available for manipulating and creating web pages are organized into objects. For example, the <code>document</code> object that represents the document itself, any <code>table</code> objects that implement the <code>HTMLTableElement</code> DOM interface for accessing HTML tables, and so forth, are all objects.</p>
             <p>The DOM is built using multiple APIs that work together. The core DOM defines the entities describing any document and the objects within it. This is expanded upon as needed by other APIs that add new features and capabilities to the DOM. For example, the HTML DOM API adds support for representing HTML documents to the core DOM, and the SVG API adds support for representing SVG documents.</p>
         </section>
@@ -33,16 +32,73 @@ alert(paragraphs[0].nodeName);</code>
 import xml.dom.minidom as m
 doc = m.parse(r"C:\Projects\Py\chap1.xml")
 doc.nodeName # DOM property of document object
-p_list = doc.getElementsByTagName("para")</code>
-            </pre>
+p_list = doc.getElementsByTagName("para")</code></pre>
         </section>
         <section id="Accessing_the_DOM" class="main-section">
             <header>Accessing the DOM</header>
             <p>You don't have to do anything special to begin using the DOM. You use the API directly in JavaScript from within what is called a script, a program run by a browser.</p>
             <p>When you create a script, whether inline in a <code>&lt;script&gt;</code> element or included in the web page, you can immediately begin using the API for the <code>document</code> or <code>window</code> objects to manipulate the document itself, or any of the various elements in the web page (the descendant elements of the document). Your DOM programming may be something as simple as the following example, which displays a message on the console by using the <code>console.log()</code> function:</p>
+            <pre><code>&lt;body onload="console.log('Welcome to my home page!');"&gt;</code></pre>
+            <p>As it is generally not recommended to mix the structure of the page (written in HTML) and manipulation of the DOM (written in JavaScript), the JavaScript parts will be grouped together here, and separated from the HTML.</p>
+            <p>For example, the following function creates a new &lt;h1&gt; element, adds text to that element, and then adds it to the tree for the document:</p>
+            <pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;script&gt;
+            // run this function when the document is loaded
+            window.onload = function() {
+        
+                // create a couple of elements in an otherwise empty HTML page
+                const heading = document.createElement("h1");
+                const heading_text = document.createTextNode("Big Head!");
+                heading.appendChild(heading_text);
+                document.body.appendChild(heading);
+            }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
         </section>
         <section id="Fundamental_data_types" class="main-section">
             <header>Fundamental data types</header>
+            <p>This page tries to describe the various objects and types in simple terms. But there are a number of different data types being passed around the API that you should be aware of.</p>
+            <p class="note"><strong>Note:</strong> Because the vast majority of code that uses the DOM revolves around manipulating HTML documents, it's common to refer to the nodes in the DOM as <strong>elements</strong>, although strictly speaking not every node is an element.</p>
+            <p>The following table briefly describes these data types.</p>
+            <table>
+                <tr>
+                    <th>Data type (Interface)</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><code>Document</code></td>
+                    <td>When a member returns an object of type <code>document</code> (e.g., the <code>ownerDocument</code> property of an element returns the <code>document</code> to which it belongs), this object is the root <code>document</code> object itself. The DOM <code>document</code> Reference chapter describes the <code>document</code> object.</td>
+                </tr>
+                <tr>
+                    <td><code>Node</code></td>
+                    <td>Every object located within a document is a node of some kind. In an HTML document, an object can be an element node but also a text node or attribute node.</td>
+                </tr>
+                <tr>
+                    <td><code>Element</code></td>
+                    <td>The <code>element</code> type is based on <code>node</code>. It refers to an element or a node of type <code>element</code> returned by a member of the DOM API. Rather than saying, for example, that the <code>document.createElement()</code> method returns an object reference to a <code>node</code>, we just say that this method returns the <code>element</code> that has just been created in the DOM. <code>element</code> objects implement the DOM <code>Element</code> interface and also the more basic <code>Node</code> interface, both of which are included together in this reference. In an HTML document, elements are further enhanced by the HTML DOM API's <code>HTMLElement</code> interface as well as other interfaces describing capabilities of specific kinds of elements (for instance, <code>HTMLTableElement</code> for <code>&lt;table&gt;</code> elements).</td>
+                </tr>
+                <tr>
+                    <td><code>NodeList</code></td>
+                    <td>A <code>nodeList</code> is an array of elements, like the kind that is returned by the method <code>document.querySelectorAll()</code>. Items in a <code>nodeList</code> are accessed by index in either of two ways:
+                        <ul>
+                            <li><code>list.item(1)</code></li>
+                            <li><code>list[1]</code></li>
+                        </ul>
+                        These two are equivalent. In the first, <code>item()</code> is the single method on the <code>nodeList</code> object. The latter uses the typical array syntax to fetch the second item in the list.</td>
+                </tr>
+                <tr>
+                    <td><code>Attr</code></td>
+                    <td>When an <code>attribute</code> is returned by a member (e.g., by the <code>createAttribute()</code> method), it is an object reference that exposes a special (albeit small) interface for attributes. Attributes are nodes in the DOM just like elements are, though you may rarely use them as such.</td>
+                </tr>
+                <tr>
+                    <td><code>NamedNodeMap</code></td>
+                    <td>A <code>namedNodeMap</code> is like an array, but the items are accessed by name or index, though this latter case is merely a convenience for enumeration, as they are in no particular order in the list. A <code>namedNodeMap</code> has an <code>item()</code> method for this purpose, and you can also add and remove items from a <code>namedNodeMap</code>.</td>
+                </tr>
+            </table>
         </section>
         <section id="DOM_interfaces" class="main-section">
             <header>DOM interfaces</header>
