@@ -102,9 +102,38 @@ p_list = doc.getElementsByTagName("para")</code></pre>
         </section>
         <section id="DOM_interfaces" class="main-section">
             <header>DOM interfaces</header>
-        </section>
-        <section id="Example" class="main-section">
-            <header>Example</header>
+            <p>This guide is about the objects and the actual things you can use to manipulate the DOM hierarchy. There are many points where understanding how these work can be confusing. For example, the object representing the HTML <code>form</code> element gets its <code>name</code> property from the <code>HTMLFormElement</code> interface but its <code>className</code> property from the <code>HTMLElement</code> interface. In both cases, the property you want is in that form object.</p>
+            <p>But the relationship between objects and the interfaces that they implement in the DOM can be confusing, and so this section attempts to say a little something about the actual interfaces in the DOM specification and how they are made available.</p>
+            <h3>Interfaces and objects</h3>
+            <p>Many objects borrow from several different interfaces. The table object, for example, implements a specialized <code>HTMLTableElement</code> interface, which includes such methods as <code>createCaption</code> and <code>insertRow</code>. But since it's also an HTML element, <code>table</code> implements the <code>Element</code> interface described in the DOM <code>Element</code> Reference chapter. And finally, since an HTML element is also, as far as the DOM is concerned, a node in the tree of nodes that make up the object model for an HTML or XML page, the table object also implements the more basic <code>Node</code> interface, from which <code>Element</code> derives.</p>
+            <p>When you get a reference to a <code>table</code> object, as in the following example, you routinely use all three of these interfaces interchangeably on the object, perhaps without knowing it.</p>
+            <pre><code>const table = document.getElementById("table");
+const tableAttrs = table.attributes; // Node/Element interface
+for (let i = 0; i < tableAttrs.length; i++) {
+    // HTMLTableElement interface: border attribute
+    if(tableAttrs[i].nodeName.toLowerCase() == "border")
+        table.border = "1";
+    }
+// HTMLTableElement interface: summary attribute
+table.summary = "note: increased border";</code></pre>
+            <h3>Core interfaces in the DOM</h3>
+            <p>This section lists some of the most commonly-used interfaces in the DOM. The idea is not to describe what these APIs do here but to give you an idea of the sorts of methods and properties you will see very often as you use the DOM. These common APIs are used in the longer examples in the DOM Examples chapter at the end of this book.</p>
+            <p>The <code>document</code> and <code>window</code> objects are the objects whose interfaces you generally use most often in DOM programming. In simple terms, the <code>window</code> object represents something like the browser, and the <code>document</code> object is the root of the document itself. <code>Element</code> inherits from the generic <code>Node</code> interface, and together these two interfaces provide many of the methods and properties you use on individual elements. These elements may also have specific interfaces for dealing with the kind of data those elements hold, as in the <code>table</code> object example in the previous section.</p>
+            <p>The following is a brief list of common APIs in web and XML page scripting using the DOM.</p>
+            <ul>
+                <li><code>document.querySelector(selector)</code></li>
+                <li><code>document.querySelectorAll(name)</code></li>
+                <li><code>document.createElement(name)</code></li>
+                <li><code>parentNode.appendChild(node)</code></li>
+                <li><code>element.innerHTML</code></li>
+                <li><code>element.style.left</code></li>
+                <li><code>element.setAttribute()</code></li>
+                <li><code>element.getAttribute()</code></li>
+                <li><code>element.addEventListener()</code></li>
+                <li><code>window.content</code></li>
+                <li><code>GlobalEventHandlers/onload</code></li>
+                <li><code>window.scrollTo()</code></li>
+            </ul>
         </section>
     </main>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
