@@ -7,15 +7,15 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
-@media (min-width: 576px) {
-    main {
-        margin-left: 30vw;
-    }
-    nav {
-        position: fixed;
-        top: 0;
-    }
-}
+        @media (min-width: 576px) {
+            main {
+                margin-left: 30vw;
+            }
+            nav {
+                position: fixed;
+                top: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -84,7 +84,7 @@ p_list = doc.getElementsByTagName("para")</code></pre>
                 <p>This page tries to describe the various objects and types in simple terms. But there are a number of different data types being passed around the API that you should be aware of.</p>
                 <p class="note"><strong>Note:</strong> Because the vast majority of code that uses the DOM revolves around manipulating HTML documents, it's common to refer to the nodes in the DOM as <strong>elements</strong>, although strictly speaking not every node is an element.</p>
                 <p>The following table briefly describes these data types.</p>
-                <table>
+                <table class="table table-bordered border-primary">
                     <tr>
                         <th>Data type (Interface)</th>
                         <th>Description</th>
