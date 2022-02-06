@@ -119,5 +119,15 @@ section header {
 }
 
 section ul {
-    margin-bottom: 0S;
+    margin-bottom: 0;
+}
+
+@media (min-width: 962px) {
+    nav {
+        position: absolute;
+        left: 0;
+    }
+    main {
+        margin-left: 300px;
+    }
 }
