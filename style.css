@@ -17,6 +17,7 @@ header {
 
 .main-title {
     font-size: 32px;
+    text-align: center;
 }
 
 main,
@@ -66,4 +67,34 @@ th:first-child {
 
 td:first-child {
     text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.links-container {
+    border-top: 5px groove black;
+    border-bottom: 5px groove black;
+    margin-top: 10px;
+}
+
+nav li {
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+nav li:last-child {
+    border-bottom: none;
+}
+
+nav {
+    margin-bottom: 45px;
 }
