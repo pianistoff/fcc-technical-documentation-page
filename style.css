@@ -20,3 +20,8 @@ main,
 nav {
     padding: 10px;
 }
+
+p,
+td {
+    text-align: justify;
+}
