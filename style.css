@@ -63,3 +63,7 @@ th {
 th:first-child {
     width: 105px;
 }
+
+td:first-child {
+    text-align: center;
+}
