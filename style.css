@@ -22,7 +22,8 @@ nav {
     padding: 10px;
 }
 
-p {
+p,
+td {
     text-align: justify;
 }
 
@@ -30,4 +31,13 @@ code {
     font-size: 15px;
     background-color: #f4f4f4;
     font-family: consolas, "Liberation Mono", courier, monospace;
+}
+
+table {
+    width: 100%;
+    table-layout:fixed;
+}
+
+td {
+    word-wrap:break-word;
 }
