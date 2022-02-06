@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: Futura, sans-serif;
+    font-size: 16px;
 }
 
 pre {
@@ -30,14 +31,18 @@ td {
 code {
     font-size: 15px;
     background-color: #f4f4f4;
-    font-family: consolas, "Liberation Mono", courier, monospace;
 }
 
 table {
     width: 100%;
-    table-layout:fixed;
+    table-layout: fixed;
 }
 
 td {
-    word-wrap:break-word;
+    word-wrap: break-word;
+}
+
+ul {
+    list-style: inside;
+    padding-left: 0;
 }
