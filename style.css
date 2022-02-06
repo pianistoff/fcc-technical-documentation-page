@@ -29,8 +29,9 @@ td {
 }
 
 code {
-    font-size: 15px;
+    font-size: 13px;
     background-color: #f4f4f4;
+    font-family: "Source Code Pro";
 }
 
 table {
