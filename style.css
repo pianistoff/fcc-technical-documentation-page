@@ -8,6 +8,10 @@ pre {
 }
 
 header {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
+}
+
+.main-title {
+    font-size: 32px;
 }
