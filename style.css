@@ -51,7 +51,9 @@ ul {
     padding-left: 0;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -101,4 +103,21 @@ nav {
 
 h3 {
     font-size: 18.72px;
+}
+
+section > *:last-child {
+    margin-bottom: 6px;
+}
+
+section > *:nth-child(2) {
+    margin-top: 6px;
+}
+
+section header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+section ul {
+    margin-bottom: 0S;
 }
