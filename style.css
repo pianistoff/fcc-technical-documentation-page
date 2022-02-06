@@ -49,3 +49,17 @@ ul {
     list-style: inside;
     padding-left: 0;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 5px;
+}
+
+th:first-child {
+    width: 105px;
+}
