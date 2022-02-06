@@ -130,4 +130,18 @@ section ul {
     main {
         margin-left: 300px;
     }
+    nav li {
+        border-bottom: none;
+        list-style: inside;
+    }
+    .links-container {
+        border: none;
+    }
+    nav li::marker {
+        font-family: "Font Awesome 5 Free";
+        content: "\f105";
+        color: black;
+        font-size: 16px;
+        font-weight: 900;
+    }
 }
