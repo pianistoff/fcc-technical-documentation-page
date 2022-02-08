@@ -12,6 +12,7 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="./libs/highlight/styles/stackoverflow-light.min.css">
         <script src="https://kit.fontawesome.com/6a3e31c601.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -162,7 +163,7 @@ p_list = doc.getElementsByTagName("para")</code></pre>
                     element, adds text to that element, and then adds it to the
                     tree for the document:
                 </p>
-                <pre><code>&lt;html&gt;
+                <pre id="html-long"><code class="html html-long">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             // run this function when the document is loaded
@@ -385,6 +386,9 @@ table.summary = "note: increased border";</code></pre>
                 </ul>
             </section>
         </main>
+        <script src="./libs/highlight/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script src="./script.js"></script>
         <!--
         <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
         -->
