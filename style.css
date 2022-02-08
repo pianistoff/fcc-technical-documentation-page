@@ -151,4 +151,7 @@ section ul {
     body {
         padding: 10px 40px;
     }
+    .main-title {
+        text-align: left;
+    }
 }
