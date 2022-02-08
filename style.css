@@ -29,10 +29,12 @@ td {
 }
 
 code {
+    /*
     font-size: 14px;
+    font-family: "Source Code Pro", sans-serif;
+    */
     background-color: rgb(246, 246, 246);
     color: rgb(47, 51, 55);
-    font-family: "Source Code Pro", sans-serif;
 }
 
 table {
