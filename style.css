@@ -120,8 +120,7 @@ section ul {
 }
 
 @media (min-width: 962px) {
-    * {
-        padding: 0;
+    body {
         margin: 0;
     }
     nav {
