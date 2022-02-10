@@ -120,9 +120,6 @@ section ul {
 }
 
 @media (min-width: 962px) {
-    body {
-        margin: 0;
-    }
     nav {
         position: fixed;
         left: 40px;
@@ -146,6 +143,7 @@ section ul {
     }
     body {
         padding: 10px 40px;
+        margin: 0;
     }
     .main-title {
         text-align: left;
