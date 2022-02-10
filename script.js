@@ -1,8 +1,7 @@
 let section = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll(".nav-link");
 const mq = window.matchMedia("(min-width: 962px)");
-
-window.onscroll = () => {
+const scrollSpy = () => {
     if (mq.matches) {
         section.forEach((sec) => {
             let top = window.scrollY;
@@ -21,3 +20,6 @@ window.onscroll = () => {
         });
     }
 };
+
+window.onscroll = scrollSpy;
+window.addEventListener('resize', scrollSpy, true);
