@@ -128,7 +128,7 @@ section ul {
         left: 40px;
     }
     main {
-        margin-left: 250.3px;
+        margin-left: 319.28px;
     }
     nav li {
         border-bottom: none;
@@ -149,5 +149,14 @@ section ul {
     }
     .main-title {
         text-align: left;
+    }
+    .nav-link {
+        padding: 5px;
+        font-weight: bold;
+    }
+    .nav-link.active,
+    .nav-link:hover {
+        background-color: black;
+        color: white;
     }
 }
