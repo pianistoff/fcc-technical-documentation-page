@@ -159,6 +159,17 @@ section ul {
         background-color: black;
         color: white;
     }
+    body.dark nav a:hover,
+    body.dark nav a.active {
+        background-color: white;
+        color: #121212;
+    }
+    nav a:hover,
+    nav a.active {
+        transition-property: background-color, color;
+        transition-timing-function: linear;
+        transition-duration: 200ms;
+    }
 }
 
 .checkbox {
@@ -192,7 +203,7 @@ section ul {
     top: 2px;
     left: 2px;
     border-radius: 50%;
-    transition: transform 0.200ms linear;
+    transition: transform 0.2ms linear;
 }
 
 .checkbox:checked + .label .ball {
@@ -232,19 +243,6 @@ body.dark nav a {
 
 nav a {
     transition: color 200ms linear;
-}
-
-body.dark nav a:hover,
-body.dark nav a.active {
-  background-color: white;
-  color: #121212;
-}
-
-nav a:hover,
-nav a.active {
-    transition-property: background-color, color;
-    transition-timing-function: linear;
-    transition-duration: 200ms;
 }
 
 body.dark .label {
