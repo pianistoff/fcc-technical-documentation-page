@@ -22,10 +22,24 @@ const scrollSpy = () => {
 };
 
 window.onscroll = scrollSpy;
-window.addEventListener('resize', scrollSpy, true);
+window.addEventListener("resize", scrollSpy, true);
 
-const checkbox = document.getElementById('checkbox');
+const checkbox = document.getElementById("checkbox");
+const codeStyle = document.getElementById("code-style");
 
-checkbox.addEventListener('change', () => {
-    document.body.classList.toggle('dark');
-})
+checkbox.addEventListener("change", function() {
+    document.body.classList.toggle("dark");
+    if (this.checked) {
+        console.log('checked');
+        codeStyle.setAttribute(
+            "href",
+            "./libs/highlight/styles/stackoverflow-dark.min.css"
+        );
+    } else {
+        console.log('unchecked');
+        codeStyle.setAttribute(
+            "href",
+            "./libs/highlight/styles/stackoverflow-light.min.css"
+        );
+    }
+});

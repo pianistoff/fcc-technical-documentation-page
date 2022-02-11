@@ -80,7 +80,7 @@ nav a {
 }
 
 .links-container {
-    border-top: 5px groove black;
+    border-top: 5px ridge black;
     border-bottom: 5px groove black;
     margin-top: 10px;
 }
@@ -169,7 +169,7 @@ section ul {
 .label {
     height: 26px;
     width: 50px;
-    background-color: #111;
+    background-color: black;
     display: flex;
     border-radius: 50px;
     align-items: center;
@@ -179,7 +179,7 @@ section ul {
 }
 
 .toggle {
-    margin: 0 auto;
+    margin: 20px auto 0;
     width: fit-content;
     margin-bottom: 35px;
 }
@@ -192,7 +192,7 @@ section ul {
     top: 2px;
     left: 2px;
     border-radius: 50%;
-    transition: transform 0.2s linear;
+    transition: transform 0.200ms linear;
 }
 
 .checkbox:checked + .label .ball {
@@ -208,13 +208,66 @@ section ul {
 }
 
 body.dark {
-    background-color: black;
+    background-color: #121212;
+    color: white;
 }
 
 body {
-    transition: background 0.2s linear;
+    transition-property: background-color, color;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
 }
 
-body.dark p {
+body.dark * {
+    border-color: white;
+}
+
+* {
+    transition: border-color 200ms linear;
+}
+
+body.dark nav a {
     color: white;
+}
+
+nav a {
+    transition: color 200ms linear;
+}
+
+body.dark nav a:hover,
+body.dark nav a.active {
+  background-color: white;
+  color: #121212;
+}
+
+nav a:hover,
+nav a.active {
+    transition-property: background-color, color;
+    transition-timing-function: linear;
+    transition-duration: 200ms;
+}
+
+body.dark .label {
+    border: 1px solid white;
+}
+
+.label {
+    transition: border 200ms linear;
+}
+
+pre code {
+    transition-property: color, background-color;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
+}
+
+body.dark code {
+    background-color: rgb(28, 27, 27);
+    color: white;
+}
+
+code {
+    transition-property: background-color, color;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
 }
