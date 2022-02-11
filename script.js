@@ -23,3 +23,9 @@ const scrollSpy = () => {
 
 window.onscroll = scrollSpy;
 window.addEventListener('resize', scrollSpy, true);
+
+const checkbox = document.getElementById('checkbox');
+
+checkbox.addEventListener('change', () => {
+    document.body.classList.toggle('dark');
+})
