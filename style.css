@@ -123,9 +123,11 @@ section ul {
     nav {
         position: fixed;
         left: 40px;
+        top: 30px;
+        padding: 10px 0 0 0;
     }
     main {
-        margin-left: 319.28px;
+        margin-left: 271.281px;
     }
     nav li {
         border-bottom: none;
