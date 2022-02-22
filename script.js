@@ -30,13 +30,11 @@ const codeStyle = document.getElementById("code-style");
 checkbox.addEventListener("change", function() {
     document.body.classList.toggle("dark");
     if (this.checked) {
-        console.log('checked');
         codeStyle.setAttribute(
             "href",
             "./libs/highlight/styles/stackoverflow-dark.min.css"
         );
     } else {
-        console.log('unchecked');
         codeStyle.setAttribute(
             "href",
             "./libs/highlight/styles/stackoverflow-light.min.css"
