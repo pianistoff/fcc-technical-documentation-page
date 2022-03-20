@@ -8,9 +8,11 @@ pre {
     overflow: auto;
 }
 
-header {
+h1,
+h2 {
     font-size: 24px;
     font-weight: bold;
+    margin: 0;
 }
 
 .main-title {
@@ -110,7 +112,7 @@ section > *:nth-child(2) {
     margin-top: 6px;
 }
 
-section header {
+section h2 {
     padding-top: 10px;
     padding-bottom: 10px;
 }

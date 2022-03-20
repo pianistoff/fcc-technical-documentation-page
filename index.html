@@ -19,7 +19,7 @@
     </head>
     <body>
         <nav id="navbar">
-            <header class="main-title">DOM Docs</header>
+            <header><h1 class="main-title">DOM Docs</h1></header>
             <div class="links-container">
                 <ul>
                     <li>
@@ -54,13 +54,13 @@
                 <label for="checkbox" class="label">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
-                    <div class="ball"></div>
+                    <span class="ball"></span>
                 </label>
             </div>
         </nav>
         <main id="main-doc">
             <section id="What_is_the_DOM?" class="main-section">
-                <header>What is the DOM?</header>
+                <header><h2>What is the DOM?</h2></header>
                 <p>
                     The Document Object Model (DOM) is a programming interface
                     for web documents. It represents the page so that programs
@@ -106,7 +106,7 @@ alert(paragraphs[0].nodeName);</code></pre>
                 </p>
             </section>
             <section id="DOM_and_JavaScript" class="main-section">
-                <header>DOM and JavaScript</header>
+                <header><h2>DOM and JavaScript</h2></header>
                 <p>
                     The previous short example, like nearly all examples, is
                     JavaScript. That is to say, it is written in JavaScript, but
@@ -144,7 +144,7 @@ doc.nodeName # DOM property of document object
 p_list = doc.getElementsByTagName("para")</code></pre>
             </section>
             <section id="Accessing_the_DOM" class="main-section">
-                <header>Accessing the DOM</header>
+                <header><h2>Accessing the DOM</h2></header>
                 <p>
                     You don't have to do anything special to begin using the
                     DOM. You use the API directly in JavaScript from within what
@@ -192,7 +192,7 @@ p_list = doc.getElementsByTagName("para")</code></pre>
 &lt;/html&gt;</code></pre>
             </section>
             <section id="Fundamental_data_types" class="main-section">
-                <header>Fundamental data types</header>
+                <header><h2>Fundamental data types</h2></header>
                 <p>
                     This page tries to describe the various objects and types in
                     simple terms. But there are a number of different data types
@@ -302,7 +302,7 @@ p_list = doc.getElementsByTagName("para")</code></pre>
                 </table>
             </section>
             <section id="DOM_interfaces" class="main-section">
-                <header>DOM interfaces</header>
+                <header><h2>DOM interfaces</h2></header>
                 <p>
                     This guide is about the objects and the actual things you
                     can use to manipulate the DOM hierarchy. There are many
@@ -346,7 +346,7 @@ p_list = doc.getElementsByTagName("para")</code></pre>
                 </p>
                 <pre><code>const table = document.getElementById("table");
 const tableAttrs = table.attributes; // Node/Element interface
-for (let i = 0; i < tableAttrs.length; i++) {
+for (let i = 0; i &lt; tableAttrs.length; i++) {
     // HTMLTableElement interface: border attribute
     if(tableAttrs[i].nodeName.toLowerCase() == "border")
         table.border = "1";
