@@ -209,7 +209,7 @@ section ul {
     top: 2px;
     left: 2px;
     border-radius: 50%;
-    transition: transform 0.2ms linear;
+    transition: transform 200ms linear;
 }
 
 .checkbox:checked + .label .ball {
