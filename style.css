@@ -146,6 +146,9 @@ section ul {
         font-size: 16px;
         font-weight: 900;
     }
+    body.dark nav li::marker {
+        color: white;
+    }
     body {
         padding: 30px 40px;
         margin: 0;
